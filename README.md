@@ -1186,5 +1186,6 @@ Encoding 在資料處理的過程中是一個很重要的程序，由於有很�
 - [scikit-learn 0.19.1](http://scikit-learn.org/stable/modules/classes.html)
 - [Guide to Encoding Categorical Values in Python](http://pbpython.com/categorical-encoding.html)
 - [Statistical Language - What are Variables?](http://www.abs.gov.au/websitedbs/a3121120.nsf/home/statistical+language+-+what+are+variables)
+
 ## Lincense
 [The MIT License](https://opensource.org/licenses/MIT)
