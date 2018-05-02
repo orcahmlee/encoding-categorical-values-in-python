@@ -1,4 +1,4 @@
-Encoding Categorical Values in Python
+[Encoding Categorical Values in Python](https://hackmd.io/4ssrTi9pSmWLPDyqXPlLfQ)
 ===
 
 ## Introduction
@@ -1189,3 +1189,6 @@ Encoding 在資料處理的過程中是一個很重要的程序，由於有很�
 
 ## Lincense
 [The MIT License](https://opensource.org/licenses/MIT)
+
+### It's Me
+[LinkedIn](https://www.linkedin.com/in/orcahmlee)
