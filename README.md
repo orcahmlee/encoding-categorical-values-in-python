@@ -430,10 +430,10 @@ dtype: object
 
 接著檢查原始資料中是否有 `NaN`；
 這裡可以利用 `DataFrame.isnull()` 檢查 Dataframe 中是否有欄位的值為 `NaN`；
->`.any()`：只要一個欄位為 `True` 即為 `True` 
->`.all()`：必須全部欄位為 `True` 才為 `True` 
->`.any(axis=1)`：依照 row direction 的方向
->`.any(axis=0)`：依照 column direction 的方向
+>`.any()`：只要一個欄位為 `True` 即為 `True` <br>
+>`.all()`：必須全部欄位為 `True` 才為 `True` <br>
+>`.any(axis=1)`：依照 row direction 的方向 <br>
+>`.any(axis=0)`：依照 column direction 的方向 <br>
 
 e.g. `DataFrame.isnull().any(axis=1)` 依照 row driection 去檢查是否有 `True` 值，只要該 row 有一個欄位為 `True`，將判定整個 row 的為 `True`，最後將有 `NaN` 的 row 取出，便是以下結果。
 
@@ -469,9 +469,9 @@ obj_df[obj_df.isnull().any(axis=1)]
 </div>
 
 利用 `Series.value_counts()` 顯示各種值的總數
->Series.size: 該 Series 的大小，包含 `NaN`
->Series.count(): 該 Series 中所有值的欄位總數，不包含 `NaN`
->Series.value_counts(): 該 Series 中，計算各種值的總數，不包含 `NaN`
+>Series.size: 該 Series 的大小，包含 `NaN` <br>
+>Series.count(): 該 Series 中所有值的欄位總數，不包含 `NaN` <br>
+>Series.value_counts(): 該 Series 中，計算各種值的總數，不包含 `NaN` <br>
 ```python
 obj_df['num_doors'].value_counts()
 ```
@@ -515,13 +515,13 @@ Name: num_doors, dtype: int64
 >子曰：「割雞焉用牛刀」
 
 `num_doors` 的值其實就是數值，只是機器看不懂，因此這裡的動作就是將 `String` 轉換成相對應的 `Integer`，如：
->`one` -> `1`
->`貳` &nbsp;&nbsp;&nbsp;-> `2`
->`三` &nbsp;&nbsp;&nbsp;-> `3`
+>`one` -> `1` <br>
+>`貳 ` -> `2` <br>
+>`三 ` -> `3` <br>
 
 使用 `DataFrame.replace()` 並傳入一個對照表 `to_replace`，即可將文字轉換成數字。
-> to_replace: 可傳入 str、regex、list、dict、Series、numeric，這裡用 dict 建立對照表。
-> inplace: 表示直接在原始的資料結構中將值更換掉，這樣就不用再 assign 一個物件，但是要注意的是原始資料將會消失。
+> to_replace: 可傳入 str、regex、list、dict、Series、numeric，這裡用 dict 建立對照表。 <br>
+> inplace: 表示直接在原始的資料結構中將值更換掉，這樣就不用再 assign 一個物件，但是要注意的是原始資料將會消失。 <br>
 
 ```python
 to_replace = {'num_doors': {'four': 4, 'two': 2}}
@@ -614,7 +614,7 @@ dtype: object
 
 以上看起來就有點怪怪的了呦(台中南波萬:thumbsup: ~~我沒有要戰南北~~)，所以 Nominal variable 就比較適合 `One Hot Encoding` 的方法。
 
-> 以下保留，需再確認！
+> 以下保留，需再確認！ <br>
 > 某些文件表示，若是使用 tree-based algorithm 時，這些數字只是類別代號，並無大小順序之別，因此可以用 Label encoding。[ref1](https://vinta.ws/code/feature-engineering.html) [ref2](https://hk.saowen.com/a/1b61dc9734ec055fd42ce2160acc79171cc5ff121248c3ceb44d65c4235feb57)
 
 如此轉換後這些資料就可以丟到演算法裡面產生模型，下面介紹兩個好用的技巧。
